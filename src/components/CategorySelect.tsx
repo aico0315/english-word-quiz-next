@@ -1,9 +1,9 @@
 'use client'
 
 import Button from "@/components/Button";
-import "/src/components/Button.css";
-import "./Dashboard.css";
-import "./CategorySelect.css";
+// import "/src/components/Button.css";
+// import "./Dashboard.css";
+// import "./CategorySelect.css";
 import getSortedCategories from "@/utils/getSortedCategories";
 import { motion } from "motion/react";
 import type { Word } from "@/types";
