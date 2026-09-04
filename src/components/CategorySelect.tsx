@@ -11,12 +11,12 @@ import type { Word } from "@/types";
 interface CategorySelectProps {
   className: string;
   wordArray: Word[];
-  onUpdate: (label: string | React.ReactElement)=> void;
-  onClose: ()=> void;
-  onScreenLifecycle: ()=> void;
+  onCategorySelect: (label: string)=> void;
+  onModalClose: ()=> void;
+  onMoveToQuiz: ()=> void;
 }
 
-export default function CategorySelect ({ className, wordArray, onUpdate, onClose, onScreenLifecycle }: CategorySelectProps){
+export default function CategorySelect ({ className, wordArray, onCategorySelect, onModalClose, onMoveToQuiz }: CategorySelectProps){
   const categories = getSortedCategories(wordArray);
 
   return(
@@ -32,12 +32,12 @@ export default function CategorySelect ({ className, wordArray, onUpdate, onClos
         transition={{ duration: 0.3 }}>
         <div className="category-list-scroll-area">
           {categories.map(elem=>
-            <Button className="category-btns-container category-btns" variant="text" label={elem} key={elem} onUpdate={onUpdate} onPhaseChange={onScreenLifecycle}/>
+            <Button className="category-btns-container category-btns" variant="text" label={elem} key={elem} onUpdate={ onCategorySelect } onPhaseChange={ onMoveToQuiz }/>
           )}
           <Button className="weak-words-btn category-btns" variant="text" label="苦手な単語"/>
         </div>
         {/* <Button className="question-continue-btn category-btns" variant="text" label="つづきから"/> */}
-        <Button className="close-btn" variant="subtle" label="× 閉じる" onUpdate={ onUpdate } onPhaseChange={ onClose }/>
+        <Button className="close-btn" variant="subtle" label="× 閉じる" onPhaseChange={ onModalClose }/>
       </motion.div>
     </motion.div>
   )
