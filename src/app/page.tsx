@@ -1,11 +1,12 @@
-import Link from "next/link";
+import { getWords } from "@/lib/words";
+import Dashboard from "@/components/Dashboard";
 
-export default function Home (){
+export default async function Home (){
+  const wordArray = await getWords();
+
   return (
     <>
-      <h1>トップ画面</h1>
-      <Link href="/quiz">クイズへ</Link>
-      <Link href="/words">単語管理画面へ</Link>
+      <Dashboard wordArray={ wordArray } className="" />
     </>
   )
 }
