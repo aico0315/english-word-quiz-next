@@ -7,7 +7,7 @@ interface ButtonProps {
   className: string;
   variant?: string;
   onUpdate?: (label: string | React.ReactElement)=> void;
-  onPhaseChange?: ()=> void;
+  onPhaseChange?: (label: string | React.ReactElement)=> void;
 }
 
 export default function Button({label, className, variant, onUpdate, onPhaseChange }: ButtonProps){
@@ -15,9 +15,9 @@ export default function Button({label, className, variant, onUpdate, onPhaseChan
       <button
         className={`${className} ${variant}`}
         onClick={
-          onUpdate && onPhaseChange ? () => { onUpdate(label); onPhaseChange(); }
+          onUpdate && onPhaseChange ? () => { onUpdate(label); onPhaseChange(label); }
           : onUpdate ? ()=> onUpdate(label)
-          : onPhaseChange }>
+          : () => onPhaseChange?.(label) }>
           {label}
       </button>
   )

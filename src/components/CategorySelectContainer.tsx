@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation"
 import CategorySelect from "./CategorySelect"
 import type { Word } from "@/types"
 import { AnimatePresence } from "motion/react"
+import { label } from "motion/react-client"
 
 interface CategorySelectContainerProps {
   wordArray: Word[];
@@ -16,13 +17,15 @@ export default function CategorySelectContainer ({ wordArray, onModalClose, isMo
   const [ selectedCategory, setSelectedCategory ] = useState< string | null >(null);
   const router = useRouter();
 
-  
-  const handleCategorySelect = (category: string) => {
-    setSelectedCategory(category);
+  const handleCategorySelect = (category: string | React.ReactElement) => {
+    if(typeof category === "string"){
+      setSelectedCategory(category);
+    }
   }
 
-  const handleMoveToQuiz = ()=> {
-    router.push('/quiz');
+  const handleMoveToQuiz = (category: string | React.ReactElement)=> {
+    console.log(category);
+    router.push(`/quiz?category=${category}`);
     onModalClose();
   }
 
