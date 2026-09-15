@@ -1,16 +1,12 @@
-'use client';
+import { getWords } from "@/lib/words";
+import QuestionScreenContainer from "@/components/QuestionScreenContainer";
 
-import { useSearchParams } from "next/navigation"
-import QuestionScreen from "@/components/QuestionScreen";
-
-export default function QuizPage (){
-  const searchParams = useSearchParams();
-  const selectedCategory = searchParams.get('category');
+export default async function QuizPage (){
+  const wordArray = await getWords();
 
   return (
     <>
-      <h1>クイズ画面</h1>
-      <QuestionScreen className="" onReturn={} onDisplay={} currentIndex={} currentWordArray={} value="" setUserInput={} selectedCategory={ selectedCategory } />
+      <QuestionScreenContainer wordArray={ wordArray } className="" />
     </>
   )
 }

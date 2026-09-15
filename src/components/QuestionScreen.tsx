@@ -1,6 +1,10 @@
 import type { Word } from "@/types";
 import SetQuestion from "./SetQuestion";
 import Button from "./Button";
+import CounterDisplay from "./CounterDisplay";
+import Image from "next/image";
+import worryBoyBlue from "@/assets/worryBoyBlue.svg"
+import worryGirlWaterBlue from "@/assets/worryGirlWaterBlue.svg"
 
 interface QuestionScreenProps {
   className: string;
@@ -14,7 +18,7 @@ interface QuestionScreenProps {
 }
 
 export default function QuestionScreen ({ className, onReturn, onDisplay, currentWordArray, currentIndex, value, setUserInput, selectedCategory }: QuestionScreenProps){
-  const currentIndexDisplay = currentIndex + 1;
+  const currentIndexDisplay = currentIndex +1;
   const wordsCount = currentWordArray.length;
 
   return (
@@ -23,9 +27,9 @@ export default function QuestionScreen ({ className, onReturn, onDisplay, curren
       <div id="question-view" className={`question-area ${ className }`}>
         <CounterDisplay currentNum={ currentIndexDisplay } totalLength={ wordsCount }/>
         <div className="counter-and-img-area">
-          <img className={`questionArea-img-left ${currentIndex % 2 === 0 ? "": "hidden"}`} src={ worryBoyBlue } alt="悩んでいる少年" />
+          <Image className={`questionArea-img-left ${currentIndex % 2 === 0 ? "": "hidden"}`} src={ worryBoyBlue } alt="悩んでいる少年" />
           <span></span>
-          <img className={`questionArea-img-right ${currentIndex % 2 !== 0 ? "": "hidden"}`} src={ worryGirlWaterBlue } alt="悩んでいる少女" />
+          <Image className={`questionArea-img-right ${currentIndex % 2 !== 0 ? "": "hidden"}`} src={ worryGirlWaterBlue } alt="悩んでいる少女" />
         </div>
         <SetQuestion pareClassName="set-quesArea" className="set-question" currentWord={ currentWordArray[currentIndex] } isDisplayingAnswer={ false } />
         <form id="answer-form" onSubmit={(e) => e.preventDefault()}>
