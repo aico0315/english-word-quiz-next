@@ -1,3 +1,5 @@
+import styles from "@/components/CounterDisplay.module.css";
+
 interface CounterDisplayProps {
   currentNum: number;
   totalLength: number;
@@ -5,6 +7,6 @@ interface CounterDisplayProps {
 
 export default function CounterDisplay ({currentNum, totalLength}: CounterDisplayProps){
   return (
-    <div className="counter-area">{`${currentNum} / ${totalLength}`}</div>
+    <div className={styles.counterArea}>{`${currentNum} / ${totalLength}`}</div>
   )
 }
