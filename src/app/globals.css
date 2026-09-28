@@ -97,6 +97,8 @@ main {
 .selected-category {
   position: fixed;
   top: 60px;
+  font-size: 1.4rem;
+  color: rgb(122, 123, 124);
 }
 
 /* ダークモード（夜） */
