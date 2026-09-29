@@ -1,4 +1,5 @@
 import type { Word } from "@/types";
+import styles from "@/components/SetQuestion.module.css";
 
 interface SetQuestionProps {
   currentWord: Word;
@@ -13,9 +14,9 @@ export default function SetQuestion({ currentWord, isDisplayingAnswer, pareClass
       <p className={ className }>{ currentWord.question }</p>
       { isDisplayingAnswer && (
         <>
-          <p className="correct-answer-title">こたえ</p>
-          <p className="correct-answer">{ currentWord.answer[0] }</p>
-          <p className="supplement-message">{ currentWord.supplement }</p>
+          <p className={styles.correctAnswerTitle}>こたえ</p>
+          <p className={styles.correctAnswer}>{ currentWord.answer[0] }</p>
+          <p className={styles.supplementMessage}>{ currentWord.supplement }</p>
         </>
         ) }
     </div>

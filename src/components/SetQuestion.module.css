@@ -1,0 +1,26 @@
+.correctAnswerTitle {
+  width: 95%;
+  font-size: 1.2rem;
+  font-family: var(--japanese);
+}
+
+.correctAnswer {
+  font-family: var(--japanese);
+  font-weight: 700;
+  font-size: 3.6rem;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  word-break: break-word;
+}
+
+.supplementMessage {
+  width: 100%;
+  height: 100%;
+  font-size: 1.5rem;
+  font-family: var(--japanese);
+  color: rgba(37, 37, 37, 0.8);
+  text-align: center;
+  white-space: pre-wrap;
+  line-height: 1.6;
+}
