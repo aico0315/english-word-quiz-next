@@ -1,8 +1,9 @@
 import Image from "next/image";
 import correctGirl from "@/assets/correctGirl.svg";
-import correctBoy from "@/assets/correctBoy@72x.webp";
-import notCorrectBoyGreen from "@/assets/notCorrectBoyGreen.png";
-import notCorrectGirl from "@/assets/notCorrectGirl.png";
+import correctBoy from "@/assets/correctBoy.svg";
+import notCorrectBoyGreen from "@/assets/notCorrectBoyGreen.svg";
+import notCorrectGirl from "@/assets/notCorrectGirl.svg";
+import styles from "@/components/ResultMessageDisplay.module.css"
 
 interface ResultMessageDisplayProps{
   result: boolean;
