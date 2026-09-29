@@ -14,16 +14,16 @@ export default function ResultMessageDisplay({ result }: ResultMessageDisplayPro
   return(
     <>
       {result ? (
-        <div className="result-message-area">
-          <Image className="result-message-icon-left" src={ correctGirl } alt="腕で大きな丸を作り正解を示す少女" />
-          <p className="result-message message-true">正解</p>
-          <Image className="result-message-icon-left" src={ correctBoy } alt="腕で大きな丸を作り正解を示す少年" />
+        <div className={styles.resultMessageArea}>
+          <Image className={styles.resultMessageIconLeft} src={ correctGirl } alt="腕で大きな丸を作り正解を示す少女" />
+          <p className={`${styles.resultMessage} ${styles.messageTrue}`}>正解</p>
+          <Image className={styles.resultMessageIconLeft} src={ correctBoy } alt="腕で大きな丸を作り正解を示す少年" />
         </div>
         ) : (
-        <div className="result-message-area">
-          <Image className="result-message-icon-left" src={ notCorrectGirl } alt="腕で大きな丸を作り正解を示す少女" />
-          <p className="result-message message-false">残念</p>
-          <Image className="result-message-icon-left" src={ notCorrectBoyGreen } alt="腕で大きな丸を作り正解を示す少年" />
+        <div className={styles.resultMessageArea}>
+          <Image className={styles.resultMessageIconLeft} src={ notCorrectGirl } alt="腕で大きな丸を作り正解を示す少女" />
+          <p className={`${styles.resultMessage} ${styles.messageFalse}`}>残念</p>
+          <Image className={styles.resultMessageIconLeft} src={ notCorrectBoyGreen } alt="腕で大きな丸を作り正解を示す少年" />
         </div>
       )}
     </>
