@@ -137,7 +137,11 @@ main {
   color: var(--darkModeFontColor);            /* 柔らかい白 */
 }
 
-/* darkMode */
 .dark-theme header h1 {
+  color: var(--darkModeFontColor);
+}
+
+/* 文字色 */
+.dark-theme .return-menu-btn {
   color: var(--darkModeFontColor);
 }
