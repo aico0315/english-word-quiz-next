@@ -1,7 +1,5 @@
 'use client';
 
-// import "/src/components/Button.css";
-
 interface ButtonProps {
   label: string | React.ReactElement;
   className: string;

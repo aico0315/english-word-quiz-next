@@ -53,7 +53,7 @@ button {
 }
 
 /*===================
-common
+        common
 ====================*/
 html, body {
   background-color: var(--baseColor);
@@ -99,6 +99,35 @@ main {
   top: 60px;
   font-size: 1.4rem;
   color: rgb(122, 123, 124);
+}
+
+/*=================
+      Button
+==================*/
+.primary {
+  font-size: 2.4rem;
+  font-family: var(--japanese);
+  margin: 0 auto;
+  color: var(--btnTextColor);
+  background-color: var(--btnColor);
+  text-align: center;
+  width: 140px;
+  height: 44px;
+  box-shadow: var(--itemShadow);
+  border-radius: var(--radius);
+}
+
+.text {
+  font-size: 2rem;
+  color: var(--questionColor);
+}
+
+.subtle {
+  font-size: 1.6rem;
+  font-family: var(--japanese);
+  font-weight: 500;
+  color: var(--btnTextColor);
+  z-index: 100;
 }
 
 /* ダークモード（夜） */
