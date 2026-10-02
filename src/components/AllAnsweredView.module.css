@@ -1,0 +1,48 @@
+.clearArea {
+  display: grid;
+  place-items: center;
+  grid-template-rows: 25% 15% 20% 3%;
+  gap: var(--space-m);
+  margin-top: var(--space-l);
+  width: 100%;
+  height: 80%;
+  z-index: 10;
+}
+
+.clearMessage {
+  font-size: 3.2rem;
+  font-family:var(--japanese);
+  font-weight: 700;
+  color: var(--questionColor);
+}
+
+.clearText {
+  font-size: 2.4rem;
+  font-family: var(--japanese);
+  color: var(--questionColor);
+  line-height: 1.4;
+  text-align: center;
+}
+
+.clearImgArea {
+  width: 100%;
+}
+
+/* ==ダークモード（夜）== */
+
+:global(.dark-theme) .clearArea,
+:global(.dark-theme) .clearArea p {
+  background-color: var(--darkModeBaseColor); /* 濃いグレー */
+  color: var(--darkModeFontColor);            /* 柔らかい白 */
+}
+
+/* ボタンの文字・背景色 */
+:global(.dark-theme) .retryBtn {
+  color: var(--darkModeFontColor);
+  background-color: var(--darkModeBtnColor);
+}
+
+/* 文字色 */
+:global(.dark-theme) .wrongWordBtn {
+  color: var(--darkModeFontColor);
+}
