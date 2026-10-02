@@ -1,4 +1,4 @@
-import happyBoysAndGirls from "/src/assets/happyBoysAndGirls.png";
+import happyBoysAndGirls from "@/assets/happyBoysAndGirls.svg";
 import Button from "./Button";
 import Image from "next/image";
 
