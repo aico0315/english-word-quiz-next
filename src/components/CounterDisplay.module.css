@@ -1,0 +1,6 @@
+.counterArea {
+  justify-self: center;
+  margin-top: 32px;
+  font-size: 1.6rem;
+  font-family: var(--english);
+}

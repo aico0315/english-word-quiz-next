@@ -76,7 +76,6 @@ export default function QuestionScreenContainer ({ wordArray, className }: Quest
 
   return (
     <>
-      <h1>クイズ画面</h1>
       {selectedCategory !== null && currentWordArray && currentScreen === "questionScreen" && <QuestionScreen className={ className } onReturn={ handleReturn } onDisplay={ handleAnswerScreenDisplay } currentIndex={ currentIndex } currentWordArray={ currentWordArray } value={ userInput } setUserInput={ setUserInput } selectedCategory={ selectedCategory } />}
       { isCorrect !== null && currentWordArray && currentScreen === "answerScreen" && <AnswerScreen currentWordArray={ currentWordArray } className="" currentIndex={ currentIndex } onNextQuestion={ handleNextQuestion } userInput={ userInput } isCorrect={ isCorrect } onReturn={ handleReturn } selectedCategory={ selectedCategory } /> }
       { currentScreen === "allAnsweredView" && <AllAnsweredView className="" onReturn={ handleReturn }/>}

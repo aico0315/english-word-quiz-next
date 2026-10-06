@@ -1,0 +1,102 @@
+.questionArea {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  grid-template-rows: 8% 12% 38% 15% auto;
+  gap: var(--space-m);
+  margin-top: 10px;
+}
+
+.counterAndImgArea {
+  /* padding-top: 50px; */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+}
+
+.questionAreaImgLeft,
+.questionAreaImgRight {
+  justify-self: center;
+  width: 100px;
+  height: 132px;
+}
+
+.questionAreaImgLeft img,
+.questionAreaImgRight img {
+  justify-self: end;
+  width: 100%;
+  height: 120%;
+}
+
+.setQuesArea {
+  width: 100%;
+  height: 100%;
+}
+
+.setQuestion {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  font-family: 'メイリオ', 'ヒラギノ角ゴシック', Arial;
+  font-weight: 700;
+  color: var(--questionColor);
+  font-size: 4rem;
+  white-space: pre-wrap;
+  background-color: var(--sectionBaseColor);
+  width: 100%;
+  height: 95%;
+  min-height: 230px;
+  box-shadow: var(--itemShadow);
+  border-radius: var(--radius);
+  word-break: break-word;
+  padding: 10px;
+  margin-top: -8px;
+}
+
+#answerForm {
+  height: 100%;
+  display: grid;
+  place-items: center;
+  grid-template-rows: 100%;
+  gap: var(--space-l);
+}
+
+.inputAnswer {
+  font-size: 3.6rem;
+  font-family: var(--japanese);
+  margin: 0 auto;
+  text-align: center;
+  color: rgb(22, 20, 20);
+  width: 100%;
+  height: 100%;
+  background-color: var(--sectionBaseColor);
+  box-shadow: var(--itemShadow);
+  border-radius: var(--radius);
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+/* ==ダークモード（夜）== */
+
+/* 背景色・文字色 */
+:global(.dark-theme) .inputAnswer,
+:global(.dark-theme) .setQuestion {
+  background-color: var(--darkModeBaseColor); /* 濃いグレー */
+  color: var(--darkModeFontColor);            /* 柔らかい白 */
+}
+
+/* 枠線色・影 */
+:global(.dark-theme) .inputAnswer,
+:global(.dark-theme) .setQuestion {
+  border: var(--darkModeBorderStyle);
+  box-shadow: var(--darkModeItemShadow);
+}
+
+/* ボタンの文字・背景色 */
+:global(.dark-theme) .judgementAnswerBtn {
+  color: var(--darkModeFontColor);
+  background-color: var(--darkModeBtnColor);
+}

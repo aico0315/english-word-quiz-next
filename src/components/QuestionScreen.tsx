@@ -5,6 +5,7 @@ import CounterDisplay from "./CounterDisplay";
 import Image from "next/image";
 import worryBoyBlue from "@/assets/worryBoyBlue.svg"
 import worryGirlWaterBlue from "@/assets/worryGirlWaterBlue.svg"
+import styles from "@/components/QuestionScreen.module.css";
 
 interface QuestionScreenProps {
   className: string;
@@ -24,20 +25,20 @@ export default function QuestionScreen ({ className, onReturn, onDisplay, curren
   return (
     <>
       <p className="selected-category">カテゴリー：{ selectedCategory }</p>
-      <div id="question-view" className={`question-area ${ className }`}>
+      <div id="question-view" className={`${styles.questionArea} ${ className }`}>
         <CounterDisplay currentNum={ currentIndexDisplay } totalLength={ wordsCount }/>
-        <div className="counter-and-img-area">
-          <Image className={`questionArea-img-left ${currentIndex % 2 === 0 ? "": "hidden"}`} src={ worryBoyBlue } alt="悩んでいる少年" />
+        <div className={styles.counterAndImgArea}>
+          <Image className={`${styles.questionAreaImgLeft} ${currentIndex % 2 === 0 ? "": styles.hidden}`} src={ worryBoyBlue } alt="悩んでいる少年" />
           <span></span>
-          <Image className={`questionArea-img-right ${currentIndex % 2 !== 0 ? "": "hidden"}`} src={ worryGirlWaterBlue } alt="悩んでいる少女" />
+          <Image className={`${styles.questionAreaImgRight} ${currentIndex % 2 !== 0 ? "": styles.hidden}`} src={ worryGirlWaterBlue } alt="悩んでいる少女" />
         </div>
-        <SetQuestion pareClassName="set-quesArea" className="set-question" currentWord={ currentWordArray[currentIndex] } isDisplayingAnswer={ false } />
-        <form id="answer-form" onSubmit={(e) => e.preventDefault()}>
-          <input className="input-answer" name="user-input" type="text" placeholder="回答を入力" value={value} onChange={(e) => {
+        <SetQuestion pareClassName={ styles.setQuesArea } className={ styles.setQuestion } currentWord={ currentWordArray[currentIndex] } isDisplayingAnswer={ false } />
+        <form id={ styles.answerForm } onSubmit={(e) => e.preventDefault()}>
+          <input className={ styles.inputAnswer } name="user-input" type="text" placeholder="回答を入力" value={value} onChange={(e) => {
             setUserInput(e.target.value);
           }} />
         </form>
-        <Button className="judgement-answer-btn" variant="primary" label="答え" onPhaseChange={ onDisplay }/>
+        <Button className={ styles.judgementAnswerBtn } variant="primary" label="答え" onPhaseChange={ onDisplay }/>
         <Button className="return-menu-btn" variant="subtle" label="メニューに戻る" onPhaseChange={ onReturn } />
       </div>
     </>

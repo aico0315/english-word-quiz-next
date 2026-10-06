@@ -1,0 +1,30 @@
+.resultMessageArea {
+  align-self: center;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  place-items: center;
+  width: 90%;
+}
+
+.resultMessage {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 700;
+  font-family: var(--japanese);
+  white-space: pre-wrap;
+  padding-left: 8px;
+}
+
+.messageTrue {
+  color: rgb(98, 123, 54);
+}
+
+.messageFalse {
+  color: rgb(196, 51, 51);
+}
+
+.resultMessageIconLeft {
+  display: flex;
+  justify-content: center;
+  width: 100px;
+}

@@ -3,6 +3,7 @@ import CounterDisplay from "./CounterDisplay";
 import ResultMessageDisplay from "./ResultMessageDisplay";
 import SetQuestion from "./SetQuestion";
 import Button from "./Button";
+import styles from "@/components/AnswerScreen.module.css";
 
 interface AnswerScreenProps {
   currentWordArray: Word[];
@@ -22,15 +23,15 @@ export default function AnswerScreen ({ currentWordArray, className, currentInde
   return(
     <>
       <p className="selected-category">カテゴリー：{ selectedCategory }</p>
-      <div id="answer-view" className={`answer-area ${ className }`}>
+      <div id="answer-view" className={`${ styles.answerArea } ${ className }`}>
         <CounterDisplay currentNum={ currentIndexDisplay } totalLength={ wordsCount } />
         <ResultMessageDisplay result={ isCorrect } />
-        <SetQuestion pareClassName="correct-answer-area" className="correct-answerArea-question" currentWord={ currentWordArray[currentIndex] } isDisplayingAnswer={ true } />
-        <div className="user-answer-area">
-          <p className="user-answer-title">あなたのこたえ</p>
-          <p className="user-answer">{ userInput }</p>
+        <SetQuestion pareClassName={ styles.correctAnswerArea } className={ styles.correctAnswerAreaQuestion } currentWord={ currentWordArray[currentIndex] } isDisplayingAnswer={ true } />
+        <div className={ styles.userAnswerArea }>
+          <p className={ styles.userAnswerTitle }>あなたのこたえ</p>
+          <p className={ styles.userAnswer }>{ userInput }</p>
         </div>
-        <Button className="next-question-btn" label="次の問題" variant="primary" onPhaseChange={ onNextQuestion }/>
+        <Button className={ styles.nextQuestionBtn } label="次の問題" variant="primary" onPhaseChange={ onNextQuestion }/>
         <Button className="return-menu-btn" label="メニューへ戻る" variant="subtle" onPhaseChange={onReturn} />
       </div>
     </>

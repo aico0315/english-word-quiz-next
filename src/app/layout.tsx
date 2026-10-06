@@ -22,8 +22,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="ja" className={`${geistSans.variable} ${geistMono.variable}`}>
       <body>
-        <Link href="/">トップ画面へ</Link>
-        {children}
+        <Link href="/"></Link>
+        <main>{children}</main>
       </body>
     </html>
   );
