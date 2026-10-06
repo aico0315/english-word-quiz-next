@@ -1,5 +1,15 @@
-export default function QuizPage (){
+import { getWords } from "@/lib/words";
+import QuestionScreenContainer from "@/components/QuestionScreenContainer";
+import { Suspense } from "react";
+
+export default async function QuizPage (){
+  const wordArray = await getWords();
+
   return (
-  <h1>クイズ画面</h1>
+    <>
+      <Suspense fallback={<p>読み込み中...</p>}>
+        <QuestionScreenContainer wordArray={ wordArray } className="" />
+      </Suspense>
+    </>
   )
 }

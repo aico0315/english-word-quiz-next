@@ -11,9 +11,9 @@ import type { Word } from "@/types";
 interface CategorySelectProps {
   className: string;
   wordArray: Word[];
-  onCategorySelect: (label: string)=> void;
+  onCategorySelect: (category: string | React.ReactElement)=> void;
   onModalClose: ()=> void;
-  onMoveToQuiz: ()=> void;
+  onMoveToQuiz: (category: string | React.ReactElement)=> void;
 }
 
 export default function CategorySelect ({ className, wordArray, onCategorySelect, onModalClose, onMoveToQuiz }: CategorySelectProps){
