@@ -18,9 +18,8 @@ interface QuestionScreenContainerProps {
 export default function QuestionScreenContainer ({ wordArray, className }: QuestionScreenContainerProps){
   const searchParams = useSearchParams();
   const selectedCategory = searchParams.get('category');
-  const sortedArray = getWordsByCategory(wordArray, selectedCategory);
+  const currentWordArray = getWordsByCategory(wordArray, selectedCategory);
 
-  const [ currentWordArray, setCurrentWordArray ] = useState<Word[]>(sortedArray);
   const [ currentIndex, setCurrentIndex ] = useState(0);
 
   const [ userInput, setUserInput ] = useState<string>("");
