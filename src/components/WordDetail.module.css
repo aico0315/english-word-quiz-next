@@ -1,0 +1,25 @@
+.wordFooter {
+  display: grid;
+  grid-template-columns: 1fr 0.18fr 0.18fr;
+  background-color: var(--btnColor);
+  border-radius: var(--radius);
+  max-height: 100px;  /* 中身が入る十分な高さを指定 */
+  align-items: center;
+  padding: 2px;
+  margin-top: 2px;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+
+.editBtn,
+.deleteBtn {
+  width: 22px;
+  height: 25px;
+  justify-self: center;
+  align-self: center;
+}
+
+.deleteBtnImg,
+.editBtnImg {
+  width: 16px;
+}
+
