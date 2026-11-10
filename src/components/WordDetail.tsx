@@ -1,7 +1,7 @@
-import Button from "./Button";
-import editBtnImg from "../assets/editBtnImg.svg";
-import deleteBtnImg from "../assets/deleteBtnImg.svg";
-import type { Word } from "../types";
+import Button from "@/components/Button";
+import editBtnImg from "@/assets/editBtnImg.svg";
+import deleteBtnImg from "@/assets/deleteBtnImg.svg";
+import type { Word } from "@/types";
 import Image from "next/image";
 import styles from "@/components/WordDetail.module.css";
 
@@ -18,8 +18,8 @@ export default function WordDetail({ word, handleClickSetId, handleClickDelete }
   return(
     <div className={styles.wordFooter}>
       <p>{word.supplement}</p>
-      <Button className={styles.editBtn} variant="edit-btn-img" label={ editBtn } onPhaseChange={() => handleClickSetId(word.id)}/>
-      <Button className={styles.deleteBtn} variant="delete-btn-img" label={ deleteBtn } onPhaseChange={ () => handleClickDelete(word.id) }/>
+      <Button className={styles.editBtn} variant={styles.editBtnImg} label={ editBtn } onPhaseChange={() => handleClickSetId(word.id)}/>
+      <Button className={styles.deleteBtn} variant={styles.deleteBtnImg} label={ deleteBtn } onPhaseChange={ () => handleClickDelete(word.id) }/>
     </div>
   )
 }

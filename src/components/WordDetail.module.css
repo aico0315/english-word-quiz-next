@@ -18,8 +18,9 @@
   align-self: center;
 }
 
-.deleteBtnImg,
-.editBtnImg {
-  width: 16px;
+.deleteBtnImg img,
+.editBtnImg img {
+  width: 20px;
+  height: 20px;
 }
 
