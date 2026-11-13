@@ -4,7 +4,7 @@ import styles from "@/components/WordManager.module.css";
 import type { Word, WordFormData } from "@/types";
 import { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
-// import WordForm from "@/components/WordForm";
+import WordForm from "@/components/WordForm";
 import WordList from "@/components/WordList";
 import Button from "@/components/Button";
 
@@ -88,7 +88,7 @@ export default function WordManager({ className, wordArray }: WordManagerProps){
 
   return(
     <div id="add-question-view" ref={ formRef } className={`${styles.addQuestionArea} ${className}`}>
-      {/* <WordForm className="" formRef={ formRef } newWord={ newWord } showSuccessMessage={ showSuccessMessage } setNewWord={ setNewWord } wordReset={ handleNewWordReset } registration={ handleClickRegistration } selectedWordId={ selectedWordId }/> */}
+      <WordForm newWord={ newWord } showSuccessMessage={ showSuccessMessage } setNewWord={ setNewWord } wordReset={ handleNewWordReset } handleClickRegistration={ handleClickRegistration } selectedWordId={ selectedWordId }/>
       <WordList currentWordArray={ currentWordArray } handleClickSetId={ handleClickSetId } handleClickDelete={ handleClickDelete } wordRefs={ wordRefs } />
       <Button className={`return-menu-btn ${styles.inPageFlow}`} label="メニューへ戻る" onPhaseChange={ handleReturn } />
     </div>
