@@ -1,0 +1,61 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px);
+}
+
+.categoryListScrollArea {
+  z-index: 100;
+  background-color: var(--baseColor);
+  border-radius: var(--radius);
+  box-shadow: var(--itemShadow);
+  display: grid;
+  grid-template-rows: 10% 10% 10%;
+  gap: 20px;
+  place-items: center;
+  width: 70%;
+  height: 60%;
+  padding: 35px 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+  transform: translate(-50%, -50%); /* 中央揃えに戻す */
+  overflow-y: scroll
+}
+
+.categoryBtns {
+  display: grid;
+  gap: 30px;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 82%;
+  left: 50%;
+  transform: translate(-50%, 0%); /* 中央揃えに戻す */
+}
+
+/* ==ダークモード（夜）== */
+
+/* 背景色・文字色 */
+:global(.dark-theme) .menuList,
+:global(.dark-theme) .categoryBtns,
+:global(.dark-theme) .categoryListScrollArea {
+  background-color: var(--darkModeBaseColor); /* 濃いグレー */
+  color: var(--darkModeFontColor);            /* 柔らかい白 */
+}
+
+/* 枠線色・影 */
+:global(.dark-theme) .menuList {
+  border: var(--darkModeBorderStyle);
+  box-shadow: var(--darkModeItemShadow);
+}
+
+/* subtleBtn文字色 */
+:global(.dark-theme) .closeBtn {
+  color: var(--darkModeFontColor);
+}
