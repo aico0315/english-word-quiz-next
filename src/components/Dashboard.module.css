@@ -1,0 +1,32 @@
+.menuArea {
+  width: 100%;
+  height: 90%;
+  display: grid;
+  grid-template-rows: 30% 20%;
+  place-items: center;
+  position: relative;
+  /* align-items: center; */
+}
+
+.menuItem {
+  font-size: 3rem;
+  font-family: var(--japanese);
+  color: var(--mainColor);
+  font-weight: 500;
+}
+
+.menuAreaImgArea {
+  width: 100%;
+  height: auto;
+  display: grid;
+  justify-self: center;
+}
+
+
+
+/* ==ダークモード（夜）== */
+
+/* テキストベースのボタン文字色 */
+:global(.dark-theme) .menuItem {
+  color: var(--darkModeFontColor);
+}
