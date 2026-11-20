@@ -31,7 +31,7 @@ export default function WordForm ({ setNewWord, newWord, wordReset, handleClickR
       </div>
       <div className={ styles.addSupplementArea }>
         <p className={ styles.supplementaryInformation }>補足情報を入力してね（読み方など）</p>
-        <textarea className={ styles.inputSupplementaryInformation } type="text" name="input-add-supplementary" value={ newWord.supplement } onChange={ (e) => setNewWord({...newWord, supplement: e.target.value}) }></textarea>
+        <textarea className={ styles.inputSupplementaryInformation } name="input-add-supplementary" value={ newWord.supplement } onChange={ (e) => setNewWord({...newWord, supplement: e.target.value}) }></textarea>
       </div>
       <p className={`${ styles.successMessage } ${ showSuccessMessage ? `${ styles.open }` : ""}`}>
         <span>登録しました</span>
