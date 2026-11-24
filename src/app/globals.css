@@ -82,6 +82,10 @@ main {
   box-sizing: border-box;
 }
 
+summary {
+  padding-bottom: 7px;
+}
+
 .return-menu-btn {
   font-size: 1.6rem;
   font-family: var(--japanese);

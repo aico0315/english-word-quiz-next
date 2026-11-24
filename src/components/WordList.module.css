@@ -1,0 +1,19 @@
+.editQuestionArea {
+  width: 100%;
+  padding: 0 var(--space-s);
+}
+
+.editQuestionAreaTitle {
+  font-size: 2rem;
+  font-family: var(--japanese);
+  margin-top: 50px;
+}
+
+#editAreaWordList {
+  margin: 40px 0;
+  display: grid;
+  gap: var(--space-l);
+  font-size: 1.6rem;
+  height: auto;
+}
+
